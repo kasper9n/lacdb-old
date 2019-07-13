@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Skip existing files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Everything else goes to index.php
+RewriteRule ^ index.php [L]
+
+# Redirects
+Redirect /includes /index.php
+Redirect /.sass-cache /index.php

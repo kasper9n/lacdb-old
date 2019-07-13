@@ -1,0 +1,358 @@
+body {
+  background-color: #323742;
+  margin: 0px;
+  color: white;
+  font-family: "Roboto", Arial, sans-serif; }
+  body input, body textarea {
+    font-family: "Roboto", Arial, sans-serif; }
+  body p {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    cursor: auto; }
+  body a, body a:link, body a:visited, body a:link:active, body a:visited:active {
+    text-decoration: none;
+    outline: none;
+    color: white; }
+  body h1 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: normal;
+    margin: 0px; }
+  body .center-xy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  body .center-x {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute; }
+  body *:focus {
+    outline: none; }
+  body .flex-col {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%; }
+  body .flex-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%; }
+  body .ts {
+    transition: all 0.15s ease; }
+
+main.login-page div input[name="submit_login"] {
+  visibility: hidden; }
+main.login-page div input[type="password"] {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #323742;
+  border: none;
+  width: 150px;
+  padding: 12px;
+  font-size: 20px;
+  text-align: center;
+  transition: all 0.15s ease; }
+  main.login-page div input[type="password"]:hover, main.login-page div input[type="password"]:focus, main.login-page div input[type="password"]:active {
+    background-color: #3F444F;
+    box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px; }
+main.login-page h1 {
+  margin-bottom: 20px; }
+
+main.tracks-page input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #03A9F4;
+  background-color: transparent;
+  padding: 0;
+  width: auto;
+  transition: all 0.15s ease; }
+  main.tracks-page input[type="submit"]:hover {
+    color: #088BCC; }
+  main.tracks-page input[type="submit"]:focus {
+    outline: none; }
+main.tracks-page div.description-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 44, 53, 0.9);
+  z-index: 5; }
+  main.tracks-page div.description-modal.hidden {
+    visibility: hidden; }
+  main.tracks-page div.description-modal.two {
+    background-color: transparent; }
+  main.tracks-page div.description-modal textarea {
+    z-index: 6;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: #3F444F;
+    color: #FFFFFF;
+    border: none;
+    width: 600px;
+    font-size: 13px;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px; }
+main.tracks-page aside {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px; }
+  main.tracks-page aside div.main {
+    height: calc(100% - 45px);
+    background-color: #282C35;
+    overflow-x: hidden; }
+    main.tracks-page aside div.main > a {
+      width: 200px;
+      height: 50px;
+      display: block; }
+    main.tracks-page aside div.main .card {
+      background-color: #282C35;
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+      z-index: 3; }
+      main.tracks-page aside div.main .card.add {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: default;
+        height: 50px; }
+        main.tracks-page aside div.main .card.add p {
+          text-align: left;
+          margin-left: 13px; }
+        main.tracks-page aside div.main .card.add a {
+          height: 24px;
+          width: 24px;
+          position: absolute;
+          right: 13px;
+          background-image: url("/cdn/icons/add.png");
+          background-size: cover;
+          transition: all 0.15s ease; }
+          main.tracks-page aside div.main .card.add a:hover {
+            opacity: 0.75; }
+      main.tracks-page aside div.main .card img.card-bg {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%) scale(1.15);
+        filter: blur(5px);
+        width: 200px;
+        height: 200px;
+        transition: all 0.15s ease; }
+      main.tracks-page aside div.main .card div.text {
+        position: relative;
+        top: -204px;
+        left: 13px;
+        height: 50px;
+        width: 194px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.15s ease; }
+        main.tracks-page aside div.main .card div.text p.title {
+          text-align: left;
+          font-size: 16px; }
+        main.tracks-page aside div.main .card div.text p.artist {
+          text-align: left;
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.8); }
+        main.tracks-page aside div.main .card div.text p.current-page.title {
+          color: #03A9F4; }
+        main.tracks-page aside div.main .card div.text p.current-page.artist {
+          color: #088BCC; }
+    main.tracks-page aside div.main .invisible-card {
+      position: relative;
+      width: 200px;
+      height: 50px;
+      transform: translateY(-100%);
+      z-index: 3;
+      transition: all 0.15s ease; }
+      main.tracks-page aside div.main .invisible-card:hover, main.tracks-page aside div.main .invisible-card:active, main.tracks-page aside div.main .invisible-card:focus {
+        background-color: rgba(255, 255, 255, 0.1); }
+  main.tracks-page aside a.logout {
+    width: 200px;
+    z-index: 3; }
+    main.tracks-page aside a.logout div.card {
+      transition: all 0.15s ease;
+      text-align: center;
+      line-height: 45px;
+      height: 45px;
+      font-size: 20px;
+      z-index: 4;
+      background-color: #282C35; }
+      main.tracks-page aside a.logout div.card:hover, main.tracks-page aside a.logout div.card:active, main.tracks-page aside a.logout div.card:focus {
+        background-color: #323742;
+        box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px; }
+main.tracks-page section {
+  width: calc(100% - 200px);
+  min-width: 355px;
+  max-height: 100%;
+  height: 100%;
+  position: absolute;
+  left: 200px;
+  margin: auto;
+  overflow-y: scroll; }
+  main.tracks-page section form {
+    height: 100%;
+    min-height: 330px;
+    max-width: 3000px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media (min-width: 1680px) {
+      main.tracks-page section form {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%); } }
+    main.tracks-page section form div.main {
+      height: calc(100% - 100px);
+      padding: 0px 10px; }
+      main.tracks-page section form div.main.add {
+        height: 100%; }
+      main.tracks-page section form div.main > div {
+        display: flex;
+        justify-content: space-around; }
+        main.tracks-page section form div.main > div:first-child {
+          height: 20px; }
+        main.tracks-page section form div.main > div input {
+          margin: 10px;
+          background-color: #323742;
+          border: none;
+          padding: 12px;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 17px;
+          width: 2000px;
+          min-width: 0;
+          transition: all 0.15s ease;
+          box-shadow: none; }
+          main.tracks-page section form div.main > div input:hover, main.tracks-page section form div.main > div input:focus {
+            box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px;
+            background-color: #3F444F; }
+          main.tracks-page section form div.main > div input[name="catalog_id"] {
+            width: 65px;
+            min-width: 65px;
+            text-align: center;
+            margin-left: 10px; }
+          main.tracks-page section form div.main > div input[name="artist"] {
+            width: 330px; }
+          main.tracks-page section form div.main > div input[name="title"] {
+            margin-right: auto;
+            width: 330px; }
+          main.tracks-page section form div.main > div input.link {
+            font-size: 16px; }
+          main.tracks-page section form div.main > div input[name="link_soundcloud"] {
+            color: #FC561F; }
+          main.tracks-page section form div.main > div input[name="link_youtube"] {
+            color: #E32524; }
+          main.tracks-page section form div.main > div input[name="link_spotify"] {
+            color: #2FD566; }
+          main.tracks-page section form div.main > div input[name="link_bandcamp"] {
+            color: #659AA8; }
+          main.tracks-page section form div.main > div input[name="link_itunes"] {
+            color: #EAEAEF; }
+          main.tracks-page section form div.main > div input[name="link_beatport"] {
+            color: #96D329; }
+          main.tracks-page section form div.main > div input[name="submit_edit"], main.tracks-page section form div.main > div input[name="submit_add"], main.tracks-page section form div.main > div input[name="submit_delete"] {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto; }
+          main.tracks-page section form div.main > div input[name="cover"] {
+            width: calc(50% - 20px);
+            max-width: 700px; }
+          main.tracks-page section form div.main > div input[type="file"], main.tracks-page section form div.main > div input[type="submit"] {
+            display: none; }
+        main.tracks-page section form div.main > div.file-section {
+          min-height: 65px; }
+          main.tracks-page section form div.main > div.file-section div.file-box {
+            margin: 10px 10px 0px 10px;
+            padding-top: 5px;
+            width: 225px;
+            height: 66px;
+            display: flex;
+            flex-wrap: wrap;
+            transition: all 0.15s ease; }
+            main.tracks-page section form div.main > div.file-section div.file-box p {
+              width: 100%; }
+            main.tracks-page section form div.main > div.file-section div.file-box label.file {
+              cursor: pointer;
+              color: #03A9F4;
+              padding: 5px;
+              margin: 6.5px auto;
+              width: auto;
+              transition: all 0.15s ease; }
+              main.tracks-page section form div.main > div.file-section div.file-box label.file:hover {
+                color: #088BCC; }
+      main.tracks-page section form div.main div.action-section {
+        min-height: 38px; }
+        main.tracks-page section form div.main div.action-section label[for="edit"], main.tracks-page section form div.main div.action-section label[for="delete"], main.tracks-page section form div.main div.action-section label[for="add"] {
+          cursor: pointer;
+          width: 28px;
+          height: 28px;
+          transition: all 0.15s ease;
+          opacity: 1;
+          background-repeat: no-repeat;
+          background-position: center; }
+          main.tracks-page section form div.main div.action-section label[for="edit"]:hover, main.tracks-page section form div.main div.action-section label[for="delete"]:hover, main.tracks-page section form div.main div.action-section label[for="add"]:hover {
+            opacity: 0.75; }
+        main.tracks-page section form div.main div.action-section label[for="edit"] {
+          background-image: url("/cdn/icons/create.png");
+          margin: 10px 5px 5px auto; }
+        main.tracks-page section form div.main div.action-section label[for="delete"] {
+          background-image: url("/cdn/icons/delete.png");
+          margin: 10px auto 5px 5px; }
+        main.tracks-page section form div.main div.action-section label[for="add"] {
+          background-image: url("/cdn/icons/add.png");
+          margin: 8px 0px; }
+    main.tracks-page section form div.downloads div.download-section {
+      justify-content: space-around; }
+      main.tracks-page section form div.downloads div.download-section div.cover {
+        display: flex;
+        align-items: center;
+        transition: all 0.15s ease; }
+        main.tracks-page section form div.downloads div.download-section div.cover:hover {
+          background-color: #3F444F;
+          box-shadow: rgba(0, 0, 0, 0.15686) 0px 3px 10px, rgba(0, 0, 0, 0.22745) 0px 3px 10px; }
+        main.tracks-page section form div.downloads div.download-section div.cover.images {
+          min-width: 190px; }
+          @media (max-width: 750px) {
+            main.tracks-page section form div.downloads div.download-section div.cover.images div.flex-col {
+              max-height: 80px; } }
+        main.tracks-page section form div.downloads div.download-section div.cover.audio {
+          min-width: 50px; }
+        main.tracks-page section form div.downloads div.download-section div.cover.description {
+          min-width: 95px; }
+        main.tracks-page section form div.downloads div.download-section div.cover .img {
+          width: 100px;
+          height: 100px;
+          background-color: #3F444F; }
+        main.tracks-page section form div.downloads div.download-section div.cover div.flex-col {
+          width: 200px;
+          align-items: center;
+          max-height: 50px;
+          flex-wrap: wrap;
+          justify-content: space-around; }
+          main.tracks-page section form div.downloads div.download-section div.cover div.flex-col a {
+            color: #03A9F4;
+            transition: all 0.15s ease;
+            margin: 0px 0px;
+            font-size: 15px;
+            cursor: pointer; }
+            main.tracks-page section form div.downloads div.download-section div.cover div.flex-col a:hover {
+              color: #088BCC; }
+
+main.dashboard-page a {
+  font-size: 20px;
+  color: #03A9F4;
+  transition: all 0.15s ease; }
+  main.dashboard-page a:hover {
+    color: #088BCC; }
+
+/*# sourceMappingURL=home.css.map */
